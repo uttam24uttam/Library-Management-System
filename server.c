@@ -585,7 +585,6 @@ void rent_book(int client_socket)
     FILE *temp_file = fopen(temp_filename, "w");
 
     int found = 0;
-    int x = 1;
 
     while (fgets(buffer, BUFFER_SIZE, file))
     {
@@ -621,7 +620,7 @@ void rent_book(int client_socket)
     write(client_socket, buffer, strlen(buffer));
 
     // if (found==1)
-    //  number_of_rented_books(client_socket,x,member_id);
+    //  number_of_rented_books(client_socket,1,member_id);
 }
 
 //RETURN BOOK
@@ -655,7 +654,6 @@ void return_book(int client_socket)
     FILE *temp_file = fopen(temp_filename, "w");
 
     int found = 0;
-    int y = 0;
 
     while (fgets(buffer, BUFFER_SIZE, file))
     {
@@ -691,8 +689,9 @@ void return_book(int client_socket)
     write(client_socket, buffer, strlen(buffer));
 
     //  if (found == 1)
-    // number_of_rented_books(client_socket,y,member_id);
+    // number_of_rented_books(client_socket,0,member_id);
 }
+
 
 int main()
 {
@@ -735,6 +734,7 @@ int main()
     while (1)
     {
         addr_len = sizeof(client_addr);
+        //Accept connection
         client_socket = accept(server_socket, (struct sockaddr *)&client_addr, &addr_len);
         if (client_socket < 0)
         {
