@@ -1,4 +1,4 @@
-This project utilizes socket programming in C to implement a Library Management System. It employs a client-server model, where the server handles requests from multiple clients simultaneously. The system incorporates distinct user roles, enabling administrators to manage library resources efficiently while providing users with seamless access to book rental and return services.
+This project utilizes socket programming and system calls in C to implement a Library Management System. It employs a client-server model, where the server handles requests from multiple clients simultaneously. The system incorporates distinct user roles, enabling administrators to manage library resources efficiently while providing users with seamless access to book rental and return services.
 Concurrency is achieved through pthreads, allowing efficient management of library resources.
 
 
